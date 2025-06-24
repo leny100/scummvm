@@ -505,7 +505,7 @@ void Spells::energyBlast() {
 	Combat &combat = *_vm->_combat;
 	Sound &sound = *_vm->_sound;
 
-	combat._monsterDamage = combat._oldCharacter->getCurrentLevel() * 2;
+	combat._monsterDamage = _vm->getRandomNumber(2, 6) * combat._oldCharacter->getCurrentLevel();
 	combat._damageType = DT_ENERGY;
 	combat._rangeType = RT_SINGLE;
 	sound.playFX(16);
@@ -875,7 +875,7 @@ void Spells::pain() {
 	Combat &combat = *_vm->_combat;
 	Sound &sound = *_vm->_sound;
 
-	combat._monsterDamage = 0;
+	combat._monsterDamage = 8;
 	combat._damageType = DT_PHYSICAL;
 	combat._rangeType = RT_GROUP;
 	sound.playFX(18);
